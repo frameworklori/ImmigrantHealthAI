@@ -1,22 +1,10 @@
-const request = require('supertest');
-const app = require('../../src/api/server');
+const Crypto = require('../../utils/crypto');
 
-describe('API Integration', () => {
-test('POST /api/allergy/detect', async () => {
-const res = await request(app)
-.post('/api/allergy/detect')
-.send({ image: "base64data" });
-expect(res.statusCode).toBe(200);
-expect(res.body).toHaveProperty('allergy');
-});
-
-test('POST /api/record/save', async () => {
-const res = await request(app)
-.post('/api/record/save')
-.set('Authorization', 'token')
-.send({ data: "health info" });
-expect(res.statusCode).toBe(200);
-expect(res.body).toHaveProperty('recordId');
+describe('Crypto', () => {
+test('encrypt and decrypt', () => {
+const data = "test data";
+const encrypted = Crypto.encrypt(data);
+const decrypted = Crypto.decrypt(encrypted);
+expect(decrypted).toBe(data);
 });
 });
-
