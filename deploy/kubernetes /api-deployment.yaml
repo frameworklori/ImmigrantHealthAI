@@ -1,1 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: api-deployment
+spec:
+replicas: 3
+selector:
+matchLabels:
+app: api
+template:
+metadata:
+labels:
+app: api
+spec:
+containers:
+- name: api
+image: xai/immigranthealthai-api:latest
+ports:
+- containerPort: 3000
+env:
+- name: AES_KEY
+valueFrom:
+secretKeyRef:
+name: api-secrets
+key: aes-key
+- name: FDA_API_KEY
+valueFrom:
+secretKeyRef:
+name: api-secrets
+key: fda-api-key
+---
+apiVersion: v1
+kind: Service
+metadata:
+name: api-service
+spec:
+selector:
+app: api
+ports:
+- port: 3000
+targetPort: 3000
+type: LoadBalancer
 
