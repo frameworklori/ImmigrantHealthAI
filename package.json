@@ -1,1 +1,22 @@
+{
+"name": "immigranthealthai",
+"version": "1.0.0",
+"private": true,
+"description": "Private AI imaging module for healthcare cost reduction",
+"scripts": {
+"start": "node src/api/server.js",
+"test": "jest",
+"build": "cd src/frontend && npm run build"
+},
+"dependencies": {
+"express": "^4.18.2",
+"crypto-js": "^4.2.0",
+"axios": "^1.6.7",
+"dotenv": "^16.4.5"
+},
+"devDependencies": {
+"jest": "^29.7.0",
+"supertest": "^6.3.4"
+}
+}
 
