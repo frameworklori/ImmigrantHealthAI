@@ -1,88 +1,46 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-.Python
+*.pyc
 env/
 venv/
-ENV/
-env.bak/
-venv.bak/
-*.pyc
-
-# Virtual environments
 .venv/
-pythonenv*/
-
-# IDEs
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 # AI/ML
-*.h5 # TensorFlow/Keras模型
-*.pb # TensorFlow凍結圖
-*.tflite # TensorFlow Lite模型
-*.ckpt # TensorFlow檢查點
+*.h5
+*.pb
+*.tflite
 model_checkpoints/
 training_logs/
-tensorboard/
 
-# Data (敏感數據，HIPAA)
-data/raw/ # 原始數據
-data/processed/ # 處理後數據
-data/sample_images/*.jpg # 除範例外圖片
-data/sample_records/*.csv # 除模擬紀錄外
-*.sqlite
+# Data (HIPAA)
+data/raw/
+data/processed/
 *.db
+data/sample_images/*.jpg
+data/sample_records/*.csv
 
 # Node.js
 node_modules/
 npm-debug.log
-yarn-error.log
 /dist
 /build
 
 # React
 /build
-/dist
 *.log
-npm-debug.log*
-yarn-error.log*
 
 # Deployment
-/deploy/*.pem # 私鑰
-/deploy/*.key # 加密金鑰
-cloud_config/ # 雲端設定（AWS/GCP）
+/deploy/*.pem
+/deploy/*.key
+cloud_config/
 
-# Tests
-coverage/
-.coverage
-*.cover
-*.lcov
+# Environment
+.env
+.env.local
 
-# Misc
-*.bak
-*.swp
-*.tmp
-temp/
-tmp/
-*.log
-logs/
-*.pid
-*.seed
-*.pid.lock
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
 
