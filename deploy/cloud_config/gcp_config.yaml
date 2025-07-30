@@ -1,1 +1,9 @@
-
+projectId: immigranthealthai-123
+bucket: immigranthealthai-data-gcp
+serviceAccount: immigranthealthai-sa@immigranthealthai-123.iam.gserviceaccount.com
+encryption:
+kmsKeyName: projects/immigranthealthai-123/locations/global/keyRings/health/keys/encryption-key
+kmsKeyRing: health
+hipaaCompliance:
+enabled: true
+auditLog: gs://immigranthealthai-audit/
